@@ -1,0 +1,11 @@
+{% extends 'income/base.html' %}
+
+{% block content %}
+<h1 class="mb-4">Delete Income</h1>
+<p>Are you sure you want to delete the income record for <strong>{{ income.date }}</strong> (Amount: ${{ income.amount }})?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
